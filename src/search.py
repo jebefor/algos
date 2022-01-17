@@ -7,8 +7,17 @@ def linear_search(array, value):
 
 
 def binary_search(array, value):
-    # O(log N) with OrderedArray
-    pass
+    # O(log N) with Ordered Array
+    start_idx = 0
+    end_idx = len(array) - 1
+    while True:
+        middlepoint = end_idx - start_idx // 2
+        if array[middlepoint] < value:
+            start_idx = middlepoint + 1
+        elif array[middlepoint] > value:
+            end_idx = middlepoint - 1
+        elif array[middlepoint] == value:
+            return middlepoint
 
 
 def has_duplicates(array):
