@@ -36,3 +36,22 @@ def greatest_number(array):
         if num > greatest_num:
             greatest_num = num
     return greatest_num
+
+
+def intersection(array1, array2):
+    # O(N)
+    if array1 > array2:
+        large_array = array1
+        small_array = array2
+    large_array = array2
+    small_array = array1
+
+    index = {}
+    for char in large_array:
+        index[char] = True
+
+    intersection = []
+    for char in small_array:
+        if char in index:
+            intersection.append(char)
+    return intersection
