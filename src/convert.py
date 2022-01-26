@@ -15,3 +15,10 @@ def to_decimal(number: Union[int, str], base: int) -> int:
         highest_digit_exp -= 1
 
     return decimal_number
+
+def factorial(number):
+    # Top-down approach
+    if number == 1:
+        return 1
+    else:
+        return number * factorial(number - 1)
